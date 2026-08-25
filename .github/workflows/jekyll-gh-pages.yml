@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: corepack install
+      - run: corepack enable && corepack install
       - run: pnpm i
       - run: npm run build
       - name: Setup Pages
