@@ -1,5 +1,5 @@
 
-const linkedinUrl = "https://www.linkedin.com/in/ivan-vitiaev";
+const email = "info@vitiaev.com";
 
 export default function Contact() {
   return (
@@ -15,12 +15,9 @@ export default function Contact() {
               options and pricing.
             </p>
             <a
-              href={linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 inline-block rounded-sm bg-bronze px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-bronze-deep"
-            >
-              Message me on LinkedIn
+              href={`mailto:${email}`}
+              className="mt-10 inline-block rounded-sm bg-bronze px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-bronze-deep">
+              {email}
             </a>
           </div>
           <ul className="space-y-5 self-end border-t border-white/10 pt-8 text-[15px] md:border-t-0 md:pt-0">
