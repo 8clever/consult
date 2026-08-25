@@ -1,3 +1,6 @@
+
+const email = "godofluck89@gmail.com";
+
 export default function Contact() {
   return (
     <section id="contact" className="bg-ink">
@@ -12,10 +15,10 @@ export default function Contact() {
               options and pricing.
             </p>
             <a
-              href="mailto:hello@vitiaev.com"
+              href={`mailto:${email}`}
               className="mt-10 inline-block rounded-sm bg-bronze px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-bronze-deep"
             >
-              hello@vitiaev.com
+              {email}
             </a>
           </div>
           <ul className="space-y-5 self-end border-t border-white/10 pt-8 text-[15px] md:border-t-0 md:pt-0">
