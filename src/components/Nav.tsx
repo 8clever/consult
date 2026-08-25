@@ -10,7 +10,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="/" className="font-display text-lg font-semibold tracking-tight text-ink">
+        <a href="#" className="font-display text-lg font-semibold tracking-tight text-ink">
           Vitiaev <span className="text-bronze">Intelligence</span>
         </a>
         <nav className="hidden items-center gap-7 md:flex">
