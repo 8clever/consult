@@ -1,6 +1,7 @@
 const links = [
   { href: '#problem', label: 'The Problem' },
   { href: '#services', label: 'What You Get' },
+  { href: '#sample', label: 'Sample' },
   { href: '#why', label: 'Why Together' },
   { href: '#scope', label: 'Scope' },
   { href: '#process', label: 'Process' },
