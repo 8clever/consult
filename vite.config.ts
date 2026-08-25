@@ -1,8 +1,10 @@
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import reactSsg from 'vite-plugin-react-ssg'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  base: '/consult/',
+  plugins: [react(), tailwindcss(), reactSsg()],
 })
