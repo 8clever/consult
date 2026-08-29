@@ -43,7 +43,7 @@ function ProductCard({
 
 export default function Services() {
   return (
-    <section id="services" className="border-b border-line">
+    <section id="services" className="border-b border-line bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <p className="text-xs font-semibold tracking-[0.2em] text-bronze uppercase">What You Get</p>
         <h2 className="mt-4 max-w-2xl font-display text-4xl font-medium tracking-tight text-ink md:text-5xl">
