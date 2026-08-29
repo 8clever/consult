@@ -1,7 +1,7 @@
 const reportItems = [
-  'Named decision-makers — CTOs, CIOs, AI directors — with direct links to their own words',
-  'Hiring signals: who is building teams, and what that says about budget',
-  'Buyer intent: companies actively purchasing development, AI implementation, and outsourcing',
+  'Leads & hiring signals: active job openings, team expansion, and budget indicators',
+  'Deep company research: financials, business models, and operational maturity',
+  'Specific decision-makers: mapped CTOs, CIOs, and AI leaders with direct public statements',
   'Company pains in their own language, ready to mirror in outreach',
   'A prioritized target list — who to contact first, and why',
 ]
