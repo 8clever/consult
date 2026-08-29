@@ -142,7 +142,7 @@ const researchFindings = [
 
 const researchStats = [
   { value: '35B+ ₽', label: 'Annual volume' },
-  { value: 'Record', label: 'Net profit growth' },
+  { value: '+26% YoY', label: 'Net profit growth' },
   { value: '60.4%', label: 'ROE (Return on Equity)' },
   { value: 'Top-10', label: 'Market position' },
 ]
