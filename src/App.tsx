@@ -2,6 +2,7 @@ import AnalystNote from './components/AnalystNote'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
+import Metrics from './components/Metrics'
 import Nav from './components/Nav'
 import Problem from './components/Problem'
 import Process from './components/Process'
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <Problem />
+        <Metrics />
         <Services />
         <SampleReport />
         <WhyTogether />
