@@ -1,65 +1,97 @@
 import { useState } from 'react'
 
-const leads = [
+const leadCategories = [
   {
-    signal: 'Mass engineering hiring — 170 engineers planned this year',
-    role: 'CTO',
-    intent: 'scaling AI automation & infra teams',
+    category: 'AI Leadership (CTO / Head of AI / AI Director)',
+    items: [
+      {
+        name: 'Executive Name',
+        position: 'CTO (Hiring 170 engineers this year for AI automation & infra)',
+        company: 'Digital Health Scale-up (New York, NY)',
+        format: 'Hybrid',
+      },
+      {
+        name: 'Executive Name',
+        position: 'VP, AI Transformation + Senior Director, AI/ML Engineering',
+        company: 'Fortune 500 Healthcare Enterprise',
+        format: 'Remote-friendly',
+      },
+      {
+        name: 'Executive Name',
+        position: 'Head of AI Delivery (Managing Director level mandate)',
+        company: 'Regulated Banking Institution (Chicago, IL)',
+        format: 'Hybrid',
+      },
+      {
+        name: 'Executive Name',
+        position: 'Head of AI & Automation',
+        company: 'Global Telecom Enterprise (Plano, TX)',
+        format: 'On-site',
+      },
+    ],
   },
   {
-    signal: 'Enterprise AI transformation, “no pilot theater”',
-    role: 'VP AI Transformation',
-    intent: 'wants production-AI builders',
+    category: 'Engineering Leadership & Startups',
+    items: [
+      {
+        name: 'Executive Name',
+        position: 'VP of Engineering (actively hiring engineering talent)',
+        company: 'FinOps & Cloud AI Scale-up',
+        format: 'US / Remote',
+      },
+      {
+        name: 'Executive Name',
+        position: 'Founding CTO / Co-founder mandate (LLM, RAG, full-stack)',
+        company: 'Confidential AI Startup',
+        format: 'Remote (equity-led)',
+      },
+    ],
   },
   {
-    signal: 'AI delivery build-out in regulated bank',
-    role: 'Head of AI Delivery',
-    intent: 'MD-level mandate',
-  },
-  {
-    signal: 'Agentic AI production build-out',
-    role: 'Head of AI & Automation',
-    intent: 'hiring across transformation program',
-  },
-  {
-    signal: 'Founding engineer search for pre-seed SaaS',
-    role: 'Founder',
-    intent: 'outsourcing founding engineer',
+    category: 'Outsourcing & Staffing Demand Signals',
+    items: [
+      {
+        name: 'Recruiter / Hiring Lead',
+        position: 'Hiring Senior GenAI Engineers, W2 contract, 12+ months',
+        company: 'Staffing & Consulting Agency (Client)',
+        format: 'On-site',
+      },
+      {
+        name: 'Executive Search',
+        position: 'Executive search: VP of Professional Services & Delivery (AI agents)',
+        company: 'Venture-Backed AI Enterprise Provider',
+        format: 'Remote (US)',
+      },
+    ],
   },
 ]
 
-const observations = [
-  'Agentic AI is the dominant theme — nearly every leadership post mentions agents, LLM orchestration, or RAG. The market is moving from pilots to production agent systems.',
-  'Enterprise transformation mandates at Fortune 500 scale carry real budgets — healthcare, banking, telecom.',
-  'Mass engineering hiring continues despite the AI narrative — one scale-up alone plans 170 engineer hires this year.',
-  'Direct buyer intent: a venture-backed AI firm is scaling an entire delivery organization; a 12-month GenAI contract need is already open.',
-  'Fractional appetite at startups — founders seek founding engineers on equity or contract terms.',
+const leadObservations = [
+  'Agentic AI is the dominant theme — nearly every leadership post mentions agents, LLM orchestration, or RAG. Companies are moving from pilots to production agent systems.',
+  'Enterprise AI transformation mandates at Fortune 500 scale carry real budgets (Healthcare, Banking, Telecom).',
+  'Mass engineering hiring continues despite the AI narrative — scale-ups plan hundreds of engineering hires this year.',
+  'Direct buyer intent spotted: venture-backed firms scaling delivery organizations and staffing agencies with active 12-month GenAI contracts.',
 ]
 
-const outreach = [
+const leadOutreach = [
   {
     rank: '#1',
-    target: 'Venture-backed AI services firm',
-    why: 'building a delivery organization; already buys external implementation capacity',
+    target: 'Venture-Backed AI Delivery Firm',
+    why: 'scaling an entire delivery organization; already buys external implementation capacity',
   },
   {
     rank: '#2',
-    target: 'Fortune 500 healthcare enterprise',
+    target: 'Fortune 500 Healthcare Enterprise',
     why: 'explicitly wants production-AI builders with regulated-industry experience',
   },
   {
     rank: '#3',
-    target: 'Healthtech scale-up, NYC',
+    target: 'Healthtech Scale-up (NYC)',
     why: '170 hires per year; realistic staff-augmentation conversation',
   },
   {
     rank: '#4',
-    target: 'AI-native re-platforming',
-    why: 'a 140-engineer org moving its entire stack to agentic workflows',
-  },
-  {
-    rank: '#5',
-    target: 'Regulated US bank',
+    target: 'Regulated Banking Institution',
     why: 'MD-level AI delivery build-out; integration-heavy work suits outsourcing vendors',
   },
 ]
@@ -72,7 +104,7 @@ const leadsStats = [
 ]
 
 const leadsBrief = [
-  { label: 'Region', value: 'United States & Global' },
+  { label: 'Region', value: 'United States' },
   { label: 'Client', value: 'Outsourcing / outstaffing provider' },
   {
     label: 'Objective',
@@ -81,22 +113,22 @@ const leadsBrief = [
 ]
 
 const researchBrief = [
-  { label: 'Target', value: '[Anonymized] Top-10 Fintech Lending Group' },
+  { label: 'Target', value: 'Anonymized Top-10 Fintech Lending Group' },
   { label: 'Scope', value: 'Digital Lending & Super-App Expansion Market' },
   {
     label: 'Objective',
-    value: 'Assess financial health, regulatory adaptation (EBS biometrics), leadership priorities, and partnership entry points',
+    value: 'Assess financial health, regulatory adaptation (biometrics), leadership priorities, and partnership entry points',
   },
 ]
 
 const researchFindings = [
   {
     category: 'Financial Health & Scale',
-    detail: 'Ranked among top-10 sector leaders with 35B+ ₽ annual issue volume. Delivered record 916M ₽ net profit (+26% YoY) with ~60% ROE and active bond issuance on the Moscow Exchange.',
+    detail: 'Ranked among top-10 sector leaders with substantial annual issue volume. Delivered record net profit (+26% YoY) with ~60% ROE and active bond issuance on major exchanges.',
   },
   {
     category: 'Regulatory & Tech Shifts',
-    detail: 'Managing mandatory biometric identification (EBS integration) via dual corporate legal structures while transitioning from short-term loans to Installment loans and Super-App ecosystem products.',
+    detail: 'Managing mandatory biometric identification compliance via dual corporate legal structures while transitioning from short-term loans to Installment loans and Super-App ecosystem products.',
   },
   {
     category: 'Leadership & Hiring',
@@ -109,8 +141,8 @@ const researchFindings = [
 ]
 
 const researchStats = [
-  { value: '35B+ ₽', label: 'Annual issue volume' },
-  { value: '916M ₽', label: 'Net profit (9M)' },
+  { value: '35B+ ₽', label: 'Annual volume' },
+  { value: 'Record', label: 'Net profit growth' },
   { value: '60.4%', label: 'ROE (Return on Equity)' },
   { value: 'Top-10', label: 'Market position' },
 ]
@@ -157,14 +189,14 @@ export default function SampleReport() {
                 <div className="flex flex-wrap items-start justify-between gap-4 border-b border-line bg-paper px-6 py-6 md:px-10">
                   <div>
                     <h3 className="font-display text-xl font-medium tracking-tight text-ink md:text-2xl">
-                      Leads: Tech &amp; AI Leadership — United States &amp; Global
+                      Leads Report: Tech &amp; AI Leadership — USA
                     </h3>
                     <p className="mt-2 text-[13px] text-muted">
-                      Search date 2026-08-28 &middot; Window August 2026 &middot; Source: LinkedIn Posts
+                      Scope: United States &middot; Window: Recent 30 days &middot; Source: Professional Network Posts
                     </p>
                   </div>
                   <span className="rounded-sm border border-bronze/40 bg-bronze/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-bronze-deep">
-                    Excerpt
+                    Excerpt (Anonymized)
                   </span>
                 </div>
 
@@ -185,29 +217,34 @@ export default function SampleReport() {
                 </div>
 
                 <div className="overflow-x-auto px-6 py-8 md:px-10">
-                  <table className="w-full min-w-[640px] text-left text-sm">
-                    <thead>
-                      <tr className="border-b border-line text-[11px] uppercase tracking-[0.15em] text-muted">
-                        <th scope="col" className="pb-3 pr-4 font-semibold">
-                          Signal
-                        </th>
-                        <th scope="col" className="pb-3 font-semibold">
-                          Lead
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {leads.map((lead) => (
-                        <tr key={lead.signal} className="border-b border-line/70 align-top last:border-0">
-                          <td className="py-4 pr-4 leading-relaxed">{lead.signal}</td>
-                          <td className="py-4 leading-relaxed">
-                            <span className="font-medium text-ink">[Full Name] / {lead.role}</span>
-                            <span> — {lead.intent}</span>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  {leadCategories.map((group, idx) => (
+                    <div key={group.category} className={idx > 0 ? 'mt-8' : ''}>
+                      <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-bronze mb-3">
+                        {group.category}
+                      </h4>
+                      <table className="w-full min-w-[700px] text-left text-sm">
+                        <thead>
+                          <tr className="border-b border-line text-[11px] uppercase tracking-[0.15em] text-muted">
+                            <th scope="col" className="pb-3 pr-4 font-semibold w-1/3">Name / Role</th>
+                            <th scope="col" className="pb-3 pr-4 font-semibold w-1/2">Position / Signal</th>
+                            <th scope="col" className="pb-3 font-semibold w-1/6">Format</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {group.items.map((item, itemIdx) => (
+                            <tr key={itemIdx} className="border-b border-line/70 align-top last:border-0">
+                              <td className="py-3.5 pr-4 font-medium text-ink">
+                                {item.name}
+                                <div className="text-xs text-muted font-normal mt-0.5">{item.company}</div>
+                              </td>
+                              <td className="py-3.5 pr-4 leading-relaxed">{item.position}</td>
+                              <td className="py-3.5 text-xs text-muted">{item.format}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="grid gap-x-12 gap-y-10 border-t border-line px-6 py-8 md:grid-cols-2 md:px-10">
@@ -216,7 +253,7 @@ export default function SampleReport() {
                       Key Observations
                     </h3>
                     <ol className="mt-5 space-y-4">
-                      {observations.map((observation, index) => (
+                      {leadObservations.map((observation, index) => (
                         <li key={index} className="flex gap-4 text-sm leading-relaxed">
                           <span
                             aria-hidden
@@ -231,10 +268,10 @@ export default function SampleReport() {
                   </div>
                   <div>
                     <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">
-                      Recommended Outreach
+                      Recommended Outreach Priorities
                     </h3>
                     <ul className="mt-5 space-y-4">
-                      {outreach.map((item) => (
+                      {leadOutreach.map((item) => (
                         <li key={item.rank} className="flex gap-4 text-sm leading-relaxed">
                           <span aria-hidden className="font-semibold whitespace-nowrap text-bronze-deep">
                             {item.rank}
@@ -266,14 +303,14 @@ export default function SampleReport() {
                 <div className="flex flex-wrap items-start justify-between gap-4 border-b border-line bg-paper px-6 py-6 md:px-10">
                   <div>
                     <h3 className="font-display text-xl font-medium tracking-tight text-ink md:text-2xl">
-                      Deep Research: [Anonymized] Fintech Lending &amp; Super-App Leader
+                      Deep Research: Anonymized Fintech Lending &amp; Super-App Leader
                     </h3>
                     <p className="mt-2 text-[13px] text-muted">
-                      Research date 2026-08-26 &middot; Source: Sector Registers, Financials &amp; Executive Analysis
+                      Source: Sector Registers, Financials &amp; Executive Analysis
                     </p>
                   </div>
                   <span className="rounded-sm border border-bronze/40 bg-bronze/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-bronze-deep">
-                    Excerpt
+                    Excerpt (Anonymized)
                   </span>
                 </div>
 
